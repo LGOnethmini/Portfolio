@@ -2,100 +2,523 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Omesha | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omesha Nethmini | Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
-<!-- NAVBAR -->
-<header class="glass-navbar">
-    <nav>
-        <ul class="nav-links">
-            <li><a href="#home" class="nav-link active">Home</a></li>
-            <li><a href="#about" class="nav-link">About</a></li>
-            <li><a href="#skills" class="nav-link">Skills</a></li>
-            <li><a href="#projects" class="nav-link">Projects</a></li>
-            <li><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
-    </nav>
-</header>
+    <!-- NAVBAR -->
+    <header class="glass-navbar">
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#teaching" class="nav-link">Teaching</a></li>
+                <li><a href="#research" class="nav-link">Research</a></li>
+                <li><a href="#blog" class="nav-link">Blog</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><button id="view-toggle" class="view-toggle" aria-pressed="false" title="Toggle view mode">View: Auto</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="view-status" class="sr-only" aria-live="polite"></div>
+
+    <!-- CURSOR GLOW -->
+    <div class="cursor-glow"></div>
+
+    <!-- HERO / HOME -->
+    <section class="hero reveal" id="home">
+        <div class="hero-content">
+            <!-- LEFT TEXT -->
+            <div class="hero-text">
+                <h4>HELLO, I'M</h4>
+                <h1>OMESHA NETHMINI</h1>
+                <h2>Data Science & Business Analytics Undergraduate</h2>
+                <p>
+                    Bridging data, education, and real-world decision making.
+                    Passionate about analytics, teaching, and transforming complex information
+                    into meaningful insights through data visualization and research.
+                </p>
+                <div class="hero-links">
+                    <a href="https://www.linkedin.com/in/omesha-nethmini-9420a032b" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/LGOnethmini" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="resume.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Resume</a>
+                </div>
+            </div>
+
+            <!-- RIGHT IMAGE -->
+            <div class="hero-image">
+                <img src="Omesha Nethmini.png" alt="Profile Image">
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ABOUT -->
+    <section id="about" class="reveal">
+        <div class="section-body">
+            <h1 class="section-title">About Me</h1>
+            <h3 class="about-text">
+                I am a Data Science and Business Analytics undergraduate at
+                General Sir John Kotelawala Defence University, with a strong academic
+                foundation in Statistics, Mathematics, and Accounting.
+                My academic interests lie in data-driven decision making, statistical
+                modeling, and the application of analytics to business and finance.
+
+                <br><br>
+
+                Alongside my studies, I am deeply passionate about teaching and knowledge
+                sharing. Through mathematics tutoring and university-level volunteer
+                leadership, I have developed the ability to explain complex concepts
+                clearly, patiently, and effectively.
+                I aspire to pursue a career in academia as a lecturer and researcher,
+                contributing to impactful research while mentoring future data professionals.
+            </h3>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="skills" class="skills-section reveal">
+      <div class="section-body">
+        <h2 class="section-title">Skills</h2>
+        <p class="skills-intro">A concise set of technical and professional skills I regularly apply — tap any skill to view a short note on experience and see proficiency levels.</p>
+
+        <div class="skills-grid" data-stagger="true">
+
+          <!-- DATA & ANALYTICS -->
+          <div class="skill-cluster">
+            <h3>Data & Analytics</h3>
+
+            <div class="skill-cards">
+              <span class="skill-card" role="button" tabindex="0" data-name="Python" data-desc="Experienced with pandas, NumPy, and scikit-learn for cleaning, analysis, and modeling." data-percent="85">Python <small class="skill-percent">85%</small></span>
+              <span class="skill-card" role="button" tabindex="0" data-name="SQL" data-desc="Strong SQL for querying and preparing datasets across relational sources." data-percent="78">SQL <small class="skill-percent">78%</small></span>
+              <span class="skill-card" role="button" tabindex="0" data-name="Statistical Analysis" data-desc="Hypothesis testing and regression analysis used in coursework and projects." data-percent="80">Statistical Analysis <small class="skill-percent">80%</small></span>
+              <span class="skill-card" role="button" tabindex="0" data-name="Data Visualization" data-desc="Built dashboards and visual stories using Power BI and ggplot2 to communicate insights." data-percent="82">Data Visualization <small class="skill-percent">82%</small></span>
+              <span class="skill-card" role="button" tabindex="0" data-name="Power BI" data-desc="Author interactive Power BI dashboards with KPIs, slicers and measures." data-percent="80">Power BI <small class="skill-percent">80%</small></span>
+            </div>
+
+            <ul class="skill-list" aria-hidden="true">
+              <li class="skill-item">
+                <div class="skill-meta">Python <span class="progress-label">85%</span></div>
+                <div class="progress-bar" data-percent="85" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                  <div class="progress-fill" style="width:0%"></div>
+                </div>
+              </li>
+              <li class="skill-item">
+                <div class="skill-meta">SQL <span class="progress-label">78%</span></div>
+                <div class="progress-bar" data-percent="78" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                  <div class="progress-fill" style="width:0%"></div>
+                </div>
+              </li>
+              <li class="skill-item">
+                <div class="skill-meta">Data Visualization <span class="progress-label">82%</span></div>
+                <div class="progress-bar" data-percent="82" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                  <div class="progress-fill" style="width:0%"></div>
+                </div>
+              </li>
+            </ul>
+
+            <div class="skill-detail" aria-live="polite"></div>
+            <p class="skill-action">→ Applied Python & SQL in academic projects to generate actionable insights and dashboards.</p>
+          </div>
+
+          <!-- PROGRAMMING & TOOLS -->
+          <div class="skill-cluster">
+            <h3>Programming & Tools</h3>
+
+            <div class="skill-cards">
+              <span class="skill-card" role="button" tabindex="0" data-name="JavaScript" data-desc="Front-end interactivity, DOM manipulation and data visualizations with D3 or Charting libraries." data-percent="72">JavaScript <small class="skill-percent">72%</small></span>
+              <span class="skill-card" role="button" tabindex="0" data-name="Java" data-desc="Object-oriented programming and small desktop applications for coursework." data-percent="68">Java <small class="skill-percent">68%</small></span>
+              <span class="skill-card" role="button" tabindex="0" data-name="HTML/CSS" data-desc="Responsive layouts and accessible interfaces; focus on clear typography and spacing." data-percent="75">HTML / CSS <small class="skill-percent">75%</small></span>
+              <span class="skill-card" role="button" tabindex="0" data-name="Git" data-desc="Version control workflows, PRs, and collaborative repositories on GitHub." data-percent="78">Git & GitHub <small class="skill-percent">78%</small></span>
+              <span class="skill-card" role="button" tabindex="0" data-name="Figma" data-desc="Wireframing and simple interface prototypes for design handoffs." data-percent="65">Figma <small class="skill-percent">65%</small></span>
+            </div>
+
+            <ul class="skill-list" aria-hidden="true">
+              <li class="skill-item">
+                <div class="skill-meta">JavaScript <span class="progress-label">72%</span></div>
+                <div class="progress-bar" data-percent="72" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                  <div class="progress-fill" style="width:0%"></div>
+                </div>
+              </li>
+              <li class="skill-item">
+                <div class="skill-meta">Git <span class="progress-label">78%</span></div>
+                <div class="progress-bar" data-percent="78" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                  <div class="progress-fill" style="width:0%"></div>
+                </div>
+              </li>
+            </ul>
+
+            <div class="skill-detail" aria-live="polite"></div>
+            <p class="skill-action">→ Built responsive projects and maintained clean repositories for coursework and collaboration.</p>
+          </div>
+
+          <!-- LEADERSHIP & COMMUNICATION -->
+          <div class="skill-cluster">
+            <h3>Leadership & Communication</h3>
+            <div class="skill-cards">
+              <span class="skill-card" role="button" tabindex="0" data-name="Leadership" data-desc="Organised IEEE events and led teams to deliver workshops and sessions." data-percent="80">Leadership <small class="skill-percent">80%</small></span>
+              <span class="skill-card" role="button" tabindex="0" data-name="Public Speaking" data-desc="Workshop facilitation and presentations to peers and student groups." data-percent="75">Public Speaking <small class="skill-percent">75%</small></span>
+              <span class="skill-card" role="button" tabindex="0" data-name="Teaching" data-desc="One-to-one and group tutoring experiences improving student results." data-percent="82">Teaching <small class="skill-percent">82%</small></span>
+            </div>
+
+            <ul class="skill-list" aria-hidden="true">
+              <li class="skill-item">
+                <div class="skill-meta">Teaching <span class="progress-label">82%</span></div>
+                <div class="progress-bar" data-percent="82" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                  <div class="progress-fill" style="width:0%"></div>
+                </div>
+              </li>
+            </ul>
+
+            <div class="skill-detail" aria-live="polite"></div>
+            <p class="skill-action">→ Led and organised IEEE initiatives and educational workshops.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
 
 
-<!-- CURSOR GLOW -->
-<div class="cursor-glow"></div>
+    <div class="divider"></div>
 
-<!-- HERO / HOME -->
-<section class="hero reveal" id="home">
-    <div class="hero-content">
-        <!-- LEFT TEXT -->
-        <div class="hero-text">
-            <h4>Hello, I'm</h4>
-            <h1>Omesha Nethmini</h1>
-            <h2>Data Science & Business Analytics Undergraduate</h2>
+    <!-- PROJECTS -->
+    <section id="projects" class="reveal">
+        <div class="section-body">
+            <h2 class="section-title">Featured Projects</h2>
+        <div class="project-cards" data-stagger="true" id="projects-list">
+
+            <!-- Student Performance (Power BI) -->
+            <article class="project-card">
+                <img class="project-image" src="images/powerbi-dashboard.png" alt="Power BI Student Performance Dashboard" loading="lazy">
+                <div class="project-content">
+                    <h3>Student Performance Analysis Dashboard (Power BI)</h3>
+                    <p>
+                        First Power BI project focused on student performance analysis using a Kaggle dataset. Performed data cleaning, modeling, and created interactive dashboards with KPIs and slicers.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Microsoft Power BI</span>
+                        <span class="tag">Data Cleaning</span>
+                        <span class="tag">Data Modeling</span>
+                    </div>
+                    <div class="project-actions">
+                        <a class="btn read-more" href="https://www.linkedin.com/posts/omesha-nethmini-9420a032b_powerbi-dataanalytics-dashboard-activity-7406351563817967616-4eaS?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFMg30IBS27kDVuugI-nDVOIzYBwX_39_9c" target="_blank" rel="noopener" aria-label="Open Power BI LinkedIn post in new tab"><i class="fab fa-linkedin" aria-hidden="true"></i><span class="read-text">View post</span><i class="fas fa-arrow-right read-arrow" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Sleep Disorders EDA (R) -->
+            <article class="project-card">
+                <img class="project-image" src="images/sleep-eda.png" alt="Sleep Disorders EDA in R" loading="lazy">
+                <div class="project-content">
+                    <h3>Analyzing Lifestyle Impact on Sleep Disorders (R)</h3>
+                    <p>
+                        Team project exploring relationships between lifestyle factors and sleep disorders using R. Conducted EDA, correlation analysis, and visual storytelling to reveal patterns across age, occupation, BMI, stress and activity metrics.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">R</span>
+                        <span class="tag">Exploratory Data Analysis</span>
+                        <span class="tag">Data Visualization</span>
+                    </div>
+                    <div class="project-actions">
+                        <a class="btn read-more" href="https://lnkd.in/dNy8fdJS" target="_blank" rel="noopener" aria-label="Open R project LinkedIn post in new tab"><i class="fab fa-linkedin" aria-hidden="true"></i><span class="read-text">View post</span><i class="fas fa-arrow-right read-arrow" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Additional projects omitted to keep this section concise — only featured projects are shown -->
+
+        </div>
+
+            <div class="projects-controls">
+                <button id="projects-prev" class="btn projects-nav" aria-label="Previous project" title="Previous"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+                <div id="projects-indicator" class="projects-indicator" aria-live="polite">1 / 2</div>
+                <button id="projects-next" class="btn projects-nav" aria-label="Next project" title="Next"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
+                <button id="projects-viewall" class="btn projects-viewall" aria-pressed="false">View all</button>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- TEACHING & MENTORSHIP -->
+    <section id="teaching" class="reveal">
+        <div class="section-body">
+            <h2 class="section-title">Teaching & Mentorship</h2>
+            <p class="about-text">
+                Here are highlights from my teaching and mentorship experience — classroom tutoring, workshop facilitation, and peer mentoring. I design clear lesson plans, run group sessions, and use data-driven approaches to track student progress.
+            </p>
+
+            <div class="teaching-carousel" data-stagger="true" aria-live="polite">
+
+                <div class="teaching-viewport">
+                    <div class="teaching-track">
+                        <article class="teaching-card">
+                            <a href="images/IMG-20231221-WA0010.jpg" target="_blank" rel="noopener">
+                                <img src="images/IMG-20231221-WA0010.jpg" alt="Tutoring session with students" loading="lazy">
+                            </a>
+                            <div class="teaching-meta">
+                                <h4>Mathematics Tutoring</h4>
+                                <p>One-to-one and small group maths sessions — improved exam scores and confidence.</p>
+                            </div>
+                        </article>
+
+                        <article class="teaching-card">
+                            <a href="images/IMG-20231214-WA0095.jpg" target="_blank" rel="noopener">
+                                <img src="images/IMG-20231214-WA0095.jpg" alt="Workshop facilitation" loading="lazy">
+                            </a>
+                            <div class="teaching-meta">
+                                <h4>Workshop Facilitation</h4>
+                                <p>Organized interactive workshops on problem-solving and study strategies.</p>
+                            </div>
+                        </article>
+
+                        <article class="teaching-card">
+                            <a href="images/IMG-20231028-WA0009.jpg" target="_blank" rel="noopener">
+                                <img src="images/IMG-20231028-WA0009.jpg" alt="Peer mentoring session" loading="lazy">
+                            </a>
+                            <div class="teaching-meta">
+                                <h4>Peer Mentoring</h4>
+                                <p>Academic mentorship to peers — helped with coursework, exam prep and research skills.</p>
+                            </div>
+                        </article>
+
+                        <article class="teaching-card">
+                            <a href="images/IMG_20240911_111249.jpg" target="_blank" rel="noopener">
+                                <img src="images/IMG_20240911_111249.jpg" alt="Teaching demonstration" loading="lazy">
+                            </a>
+                            <div class="teaching-meta">
+                                <h4>Teaching Demonstrations</h4>
+                                <p>Delivered model lessons to demonstrate effective instruction methods.</p>
+                            </div>
+                        </article>
+
+                        <!-- Student feedback (add image file IMG-20231203-WA0007.jpg to images/) -->
+                        <article class="teaching-card teaching-card--feedback">
+                            <a href="images/IMG-20231203-WA0007.jpg" target="_blank" rel="noopener">
+                                <img src="images/IMG-20231203-WA0007.jpg" alt="Student feedback screenshot" loading="lazy">
+                            </a>
+                            <div class="teaching-meta">
+                                <h4>Student Feedback</h4>
+                                <p>Positive feedback from a student following a tutoring session, highlighting improvements and clarity of instruction.</p>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+
+                <!-- Overlay arrows centered on images -->
+                <div class="teaching-overlay-controls" aria-hidden="false">
+                    <button id="teaching-prev" class="btn teaching-nav teaching-nav--overlay teaching-nav--left" aria-label="Previous" title="Previous"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+                    <button id="teaching-next" class="btn teaching-nav teaching-nav--overlay teaching-nav--right" aria-label="Next" title="Next"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
+                </div>
+
+                <div class="teaching-controls">
+                    <div id="teaching-indicator" class="teaching-indicator" aria-live="polite">1 - 2 / 5</div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- RESEARCH & PUBLICATIONS -->
+    <section id="research" class="reveal">
+        <div class="section-body">
+            <h2 class="section-title">Research Interests</h2>
             <p>
-                Aspiring Data Analyst | Volunteer | Passionate About Data Visualization & Business Insights
+                <strong>Academic Focus:</strong>
+                Statistical modeling, data analytics in business decision making,
+                and the application of AI in accounting and finance.
+            </p>
+            <p>
+                <strong>Research Work:</strong>
+                Completed case studies and literature reviews on emerging technologies
+                in accounting and analytics as part of university coursework.
+            </p>
+            <p>
+                <strong>Future Direction:</strong>
+                Interested in contributing to academic research and publications
+                in data science, business analytics, and education analytics.
             </p>
         </div>
+    </section>
 
-        <!-- RIGHT IMAGE -->
-        <div class="hero-image">
-            <img src="Omesha Nethmini.jpg" alt="Profile Image">
+    <div class="divider"></div>
+
+    <div class="divider"></div>
+
+<!-- LEADERSHIP & VOLUNTEER EXPERIENCE -->
+<section id="leadership" class="reveal">
+    <div class="section-body">
+        <h2 class="section-title">Leadership & Volunteer Experience</h2>
+
+        <div class="experience-list">
+
+            <article class="experience-card">
+                <h3>IEEE Student Branch – General Sir John Kotelawala Defence University</h3>
+                <h4>Secretary | Event Secretary | Event Chair</h4>
+                <span class="experience-duration">2025 – 2026</span>
+
+                <ul>
+                    <li>Served as a core organizing member for major IEEE events including <strong>Navigator 2.0, Luminary ’25, Memento ’25, Step Into Industry 4.0, Cypher 3.0, Membership Development Initiatives, and IEEEXtreme 19.0</strong>.</li>
+                    <li>Led and managed <strong>all official documentation</strong>: formal letters, proposals, emails, meeting minutes, certificates, captions, content, and post-event reports.</li>
+                    <li>Acted as <strong>Event Chair & Event Secretary</strong> for <strong>PostPalette ’25</strong>, overseeing the full project lifecycle and coordinating with the Organizing Committee.</li>
+                    <li>Monitored member engagement, assigned tasks, and supported smooth <strong>event-day operations</strong> and logistics.</li>
+                    <li>Worked closely with IEEE Computer Society, WIE Affinity Group, and Zone-level teams.</li>
+                </ul>
+            </article>
+
+            <article class="experience-card">
+                <h3>Xelerate ’25</h3>
+                <h4>Micro Volunteer</h4>
+                <span class="experience-duration">2025</span>
+
+                <ul>
+                    <li>Handled backstage coordination tasks during the event.</li>
+                    <li>Prepared and verified official certificates for participants and contributors.</li>
+                </ul>
+            </article>
+
+            <article class="experience-card">
+                <h3>Master in LinkedIn Program</h3>
+                <h4>Secretary Team Member (Computer Society)</h4>
+                <span class="experience-duration">2025</span>
+
+                <ul>
+                    <li>Created structured scripts and content to support professional branding and LinkedIn optimization sessions.</li>
+                </ul>
+            </article>
+
+            <article class="experience-card">
+                <h3>IEEE Jamboree – Zone B</h3>
+                <h4>Secretary Team Member</h4>
+                <span class="experience-duration">2025</span>
+
+                <ul>
+                    <li>Contributed to coordination, documentation, and communication activities at zone-level IEEE initiatives.</li>
+                </ul>
+            </article>
+
+            <article class="experience-card">
+                <h3>Sasnaka Sansada</h3>
+                <h4>Volunteer</h4>
+                <span class="experience-duration">2023 – Present</span>
+
+                <ul>
+                    <li>Engaged in community volunteering initiatives, developing teamwork, responsibility, and social awareness.</li>
+                </ul>
+            </article>
+
         </div>
     </div>
 </section>
+    <div class="divider"></div>
 
-<div class="divider"></div>
+    <!-- BLOG -->
+    <section id="blog" class="reveal">
+        <div class="section-body">
+            <h2 class="section-title">Blog: Learning Made Simple</h2>
+            <div class="blog-post">
+                <h3>What is a P-value?</h3>
+                <p>A simple explanation of P-value for anyone new to statistics, showing its importance in hypothesis testing and decision making.</p>
+                <a href="#">Read More</a>
+            </div>
+            <div class="blog-post">
+                <h3>How to Read a Balance Sheet</h3>
+                <p>A beginner-friendly guide to understanding company balance sheets and key financial indicators.</p>
+                <a href="#">Read More</a>
+            </div>
+        </div>
+    </section>
 
+    <div class="divider"></div>
 
-<!-- ABOUT -->
-<section id="about" class="reveal">
-    <h2 class="section-title">About Me</h2>
-    <div class="container">
-        <p class="about-text">
-            I am an undergraduate at General Sir John Kotelawala Defence University,
-            pursuing a degree in Data Science & Business Analytics with strong
-            interests in Statistics, Data Visualization, Accounting, and Leadership.
-        </p>
-    </div>
-</section>
+    <!-- CONTACT -->
+    <section id="contact" class="contact-section reveal">
+        <div class="section-body">
+            <h2 class="section-title">Contact</h2>
 
-<div class="divider"></div>
+            <div class="contact-container">
+                <div class="contact-left">
+                    <div class="contact-card">
+                        <i class="fas fa-envelope fa-2x"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <a href="mailto:omeshanethmini111@gmail.com">omeshanethmini111@gmail.com</a>
+                        </div>
+                    </div>
 
-<!-- SKILLS -->
-<section id="skills" class="reveal">
-    <h2 class="section-title">Skills</h2>
-    <div class="skills-container">
-        <span class="skill">Python</span>
-        <span class="skill">Statistics</span>
-        <span class="skill">Data Visualization</span>
-        <span class="skill">Power BI</span>
-        <span class="skill">Microsoft Excel</span>
-        <span class="skill">Leadership & Teamwork</span>
-    </div>
-</section>
+                    <div class="contact-card">
+                        <i class="fas fa-phone fa-2x"></i>
+                        <div>
+                            <h4>WhatsApp</h4>
+                            <a href="tel:+94703939263">+94 70 393 9263</a>
+                        </div>
+                    </div>
 
-<div class="divider"></div>
+                    <div class="contact-card">
+                        <i class="fas fa-map-marker-alt fa-2x"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Kalutara District, Western Province, Sri Lanka</p>
+                        </div>
+                    </div>
 
-<!-- PROJECTS -->
-<section id="projects" class="reveal">
-    <h2 class="section-title">Projects & Experience</h2>
-    <ul class="projects-list">
-        <li><b>Library Management System</b> – Java-based OOP application.</li>
-        <li><b>Power BI Dashboard</b> – Student performance analysis.</li>
-        <li><b>IEEE & BCS Event Coordination</b> – Organized academic events.</li>
-        <li><b>Mathematics Tuition Teaching</b> – Student-focused lessons.</li>
-    </ul>
-</section>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/omesha-nethmini-9420a032b" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.facebook.com/share/1DZXfzCbRP/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/omesha_nethmini/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://github.com/LGOnethmini" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
 
-<div class="divider"></div>
+                    <div class="map-wrapper">
+                        <iframe title="Location map" src="https://www.openstreetmap.org/export/embed.html?bbox=79.95%2C6.57%2C79.97%2C6.59&amp;layer=mapnik" style="border:0;width:100%;height:220px;"></iframe>
+                    </div>
+                </div>
 
-<!-- CONTACT -->
-<section id="contact" class="contact-section reveal">
-    <h2 class="section-title">Contact</h2>
-    <p>Email: <a href="mailto:omesha@email.com">omesha@email.com</a></p>
-    <p>LinkedIn: <a href="#">linkedin.com/in/omesha-nethmini</a></p>
-</section>
+                <div class="contact-right">
+                    <button class="accordion-toggle" aria-expanded="false">Get in touch</button>
+                    <div class="accordion-panel" hidden>
+                        <form id="contact-form" novalidate>
+                            <div class="form-row">
+                                <label for="name">Name</label>
+                                <input id="name" name="name" type="text" required minlength="2" />
+                            </div>
+                            <div class="form-row">
+                                <label for="email">Email</label>
+                                <input id="email" name="email" type="email" required />
+                            </div>
+                            <div class="form-row">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="6" required minlength="10"></textarea>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn">Send</button>
+                                <small class="form-help">Uses your email client (mailto). To use Formspree replace the JS with Formspree action.</small>
+                            </div>
+                            <div id="form-success" class="form-success" aria-live="polite" hidden>Thanks! Your message has been prepared in your email client.</div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<script src="script.js"></script>
+    <footer>
+        <p>&copy; 2026 Omesha Nethmini | Designed & Developed by Me</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
