@@ -345,42 +345,11 @@ if (accordionToggle && accordionPanel) {
 
 const contactForm = document.getElementById('contact-form');
 if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        const name = contactForm.name.value.trim();
-        const email = contactForm.email.value.trim();
-        const message = contactForm.message.value.trim();
-
-        // simple validation and visual feedback
-        let valid = true;
-        [contactForm.name, contactForm.email, contactForm.message].forEach(field => {
-            field.classList.remove('invalid');
-            if (!field.checkValidity()) {
-                field.classList.add('invalid');
-                valid = false;
-            }
-        });
-
-        if (!valid) return;
-
-        const subject = `Contact from Portfolio: ${name}`;
-        const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
-        const mailto = `mailto:omesha.kasthuriarachchi@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-        // open mail client
-        window.location.href = mailto;
-
-        const success = document.getElementById('form-success');
-        if (success) success.hidden = false;
-        contactForm.reset();
-        setTimeout(() => { if (success) success.hidden = true; }, 6500);
-
-        // close accordion
-        if (accordionToggle && accordionPanel) {
-            accordionToggle.setAttribute('aria-expanded', 'false');
-            accordionPanel.hidden = true;
-        }
+    contactForm.addEventListener('submit', function(e) {
+        const submitBtn = contactForm.querySelector('.btn');
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+        // Form will submit naturally to Web3Forms
     });
 
     // remove invalid state on input
@@ -436,16 +405,21 @@ if (contactForm) {
         const pressed = viewAll.getAttribute('aria-pressed') === 'true';
         viewAll.setAttribute('aria-pressed', String(!pressed));
         if (!pressed) {
-            // now in 'all' mode
-            cards.forEach(c => c.classList.remove('project-hidden'));
+            // now in 'all' mode - show all cards
+            cards.forEach(c => {
+                c.classList.remove('project-hidden');
+                c.classList.add('in-view');
+            });
             indicator.style.display = 'none';
-            prev.setAttribute('disabled', ''); next.setAttribute('disabled', '');
+            prev.style.display = 'none';
+            next.style.display = 'none';
             viewAll.textContent = 'Show single';
         } else {
             // back to single
             showIndex(index);
             indicator.style.display = '';
-            prev.removeAttribute('disabled'); next.removeAttribute('disabled');
+            prev.style.display = '';
+            next.style.display = '';
             viewAll.textContent = 'View all';
             // bring carousel into view
             document.getElementById('projects').scrollIntoView({behavior:'smooth'});
@@ -459,7 +433,7 @@ if (contactForm) {
 })();
 
 /* =========================
-   TEACHING CAROUSEL - overlay arrows, single-step navigation
+   TEACHING CAROUSEL - Shows 3 cards at once (responsive)
 ========================= */
 (function(){
     const carousel = document.querySelector('.teaching-carousel');
@@ -469,25 +443,40 @@ if (contactForm) {
     const track = carousel.querySelector('.teaching-track');
     const prev = document.getElementById('teaching-prev');
     const next = document.getElementById('teaching-next');
-    const indicator = document.getElementById('teaching-indicator');
     const cards = Array.from(track.querySelectorAll('.teaching-card'));
     if (!viewport || !track || cards.length === 0) return;
 
-    let perView = window.innerWidth < 720 ? 1 : 2;
+    let perView = 3; // default: 3 cards
     let index = 0;
 
+    function getPerView() {
+        if (window.innerWidth <= 600) return 1;
+        if (window.innerWidth <= 900) return 2;
+        return 3;
+    }
+
     function updateControls() {
+        perView = getPerView();
         prev.disabled = index === 0;
         next.disabled = index >= Math.max(0, cards.length - perView);
-        indicator.textContent = `${index + 1} - ${Math.min(index + perView, cards.length)} / ${cards.length}`;
+        
+        // Hide arrows if all cards are visible
+        if (cards.length <= perView) {
+            prev.style.display = 'none';
+            next.style.display = 'none';
+        } else {
+            prev.style.display = '';
+            next.style.display = '';
+        }
     }
 
     function showIndex(i) {
-        perView = window.innerWidth < 720 ? 1 : 2;
+        perView = getPerView();
         index = Math.min(Math.max(0, i), Math.max(0, cards.length - perView));
         const target = cards[index];
         if (target) {
-            viewport.scrollTo({ left: target.offsetLeft - track.offsetLeft, behavior: 'smooth' });
+            const scrollPos = target.offsetLeft - track.offsetLeft;
+            viewport.scrollTo({ left: scrollPos, behavior: 'smooth' });
         }
         updateControls();
     }
@@ -495,28 +484,22 @@ if (contactForm) {
     prev.addEventListener('click', () => { showIndex(index - 1); });
     next.addEventListener('click', () => { showIndex(index + 1); });
 
-    // keyboard support bound to carousel
+    // Keyboard support
     carousel.addEventListener('keydown', (e) => {
         if (e.key === 'ArrowRight') next.click();
         if (e.key === 'ArrowLeft') prev.click();
     });
 
+    // Responsive resize
     window.addEventListener('resize', () => {
-        perView = window.innerWidth < 720 ? 1 : 2;
-        index = Math.min(index, Math.max(0, cards.length - perView));
-        // hide controls if not needed
-        if (cards.length <= perView) {
-            prev.style.display = 'none'; next.style.display = 'none'; indicator.style.display = 'none';
-        } else {
-            prev.style.display = ''; next.style.display = ''; indicator.style.display = '';
+        const newPerView = getPerView();
+        if (newPerView !== perView) {
+            index = Math.min(index, Math.max(0, cards.length - newPerView));
+            showIndex(index);
         }
-        showIndex(index);
+        updateControls();
     });
 
-    // initialize
-    if (cards.length <= perView) {
-        prev.style.display = 'none'; next.style.display = 'none'; indicator.style.display = 'none';
-    }
-
+    // Initialize
     showIndex(0);
 })();
